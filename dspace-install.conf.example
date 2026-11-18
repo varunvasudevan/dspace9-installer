@@ -1,0 +1,35 @@
+# dspace-install.conf.example
+# Copy to dspace-install.conf (same folder as install-dspace.sh) and edit.
+# The installer loads it automatically. Anything left unset uses the default.
+
+# --- Site ---
+DOMAIN="repo.example.org"          # FQDN or server IP
+DSPACE_NAME="My Institutional Repository"
+ENABLE_NGINX="yes"                  # yes = reverse proxy on 80/443
+ENABLE_SSL="no"                     # yes = Let's Encrypt (needs real DNS)
+SSL_EMAIL=""                        # required when ENABLE_SSL=yes
+
+# --- Initial administrator ---
+ADMIN_EMAIL="admin@example.org"
+ADMIN_FIRST="Repository"
+ADMIN_LAST="Admin"
+# ADMIN_PASS=""                     # leave unset to generate a random one
+ADMIN_LANG="en"
+
+# --- Database ---
+DB_NAME="dspace"
+DB_USER="dspace"
+# DB_PASS=""                       # alphanumeric only; unset = random
+
+# --- Versions ---
+# DSPACE_VERSION="9.2"
+# SOLR_VERSION="9.10.1"
+# TOMCAT_VERSION="10.1.55"
+# NODE_MAJOR="22"
+# JAVA_PKG="openjdk-21-jdk-headless"
+
+# --- Tuning ---
+TOMCAT_XMX="2048m"
+SOLR_HEAP="1g"
+PM2_INSTANCES="2"
+UI_BUILD_HEAP_MB="4096"
